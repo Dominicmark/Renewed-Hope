@@ -20,13 +20,13 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+        <div className="flex justify-between h-20 sm:h-24">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center gap-2 sm:gap-3">
-              <img src="/logo.png" alt="RHGI Logo" className="h-10 sm:h-12 w-auto object-contain shrink-0" />
+            <Link to="/" className="flex-shrink-0 flex items-center gap-3 sm:gap-4">
+              <img src="/logo.png" alt="RHGI Logo" className="h-14 sm:h-16 w-auto object-contain shrink-0" />
               <div className="flex flex-col justify-center">
-                <span className="font-black text-base sm:text-xl leading-none text-gray-900 tracking-tight">RENEWED HOPE</span>
-                <span className="font-bold text-[0.5rem] sm:text-[0.65rem] leading-none text-green-700 tracking-[0.15em] mt-1">GRASSROOTS INITIATIVE</span>
+                <span className="font-black text-xl sm:text-2xl leading-none text-gray-900 tracking-tight">RENEWED HOPE</span>
+                <span className="font-bold text-[0.6rem] sm:text-[0.75rem] leading-none text-green-700 tracking-[0.15em] mt-1.5">GRASSROOTS INITIATIVE</span>
               </div>
             </Link>
           </div>
