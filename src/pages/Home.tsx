@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Target, TrendingUp, HeartHandshake, ArrowRight, ChevronRight, Video, X } from 'lucide-react';
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -103,6 +104,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-col w-full">
+      <SEO 
+        title="Home" 
+        description="RH Grassroots Initiative works directly with local communities across Nigeria to fund projects, foster education, and drive structural reforms." 
+      />
       {/* HERO SECTION */}
       <section className="relative bg-[#f4f4f5] overflow-hidden flex flex-col lg:block">
         {/* Faded Crowd Background with Dotted Texture */}

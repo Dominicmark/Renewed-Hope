@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Volunteer from './pages/Volunteer';
@@ -12,10 +14,12 @@ import Achievements from './pages/Achievements';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="achievements" element={<Achievements />} />
           <Route path="volunteer" element={<Volunteer />} />
@@ -27,5 +31,6 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </HelmetProvider>
   );
 }

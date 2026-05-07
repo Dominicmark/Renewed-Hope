@@ -2,6 +2,7 @@ import { motion, useInView, useAnimation } from 'motion/react';
 import { Target, Eye, Heart, Users, ShieldCheck, Zap, Megaphone, BookOpen, Globe, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useRef, useEffect, useState } from 'react';
+import SEO from '../components/SEO';
 
 const CountUp = ({ end, suffix = "", duration = 2 }: { end: number, suffix?: string, duration?: number }) => {
   const [count, setCount] = useState(0);
@@ -37,6 +38,10 @@ const CountUp = ({ end, suffix = "", duration = 2 }: { end: number, suffix?: str
 export default function About() {
   return (
     <div className="bg-white">
+      <SEO 
+        title="About Us" 
+        description="Learn about RH Grassroots Initiative, our mission, vision, and how we are empowering local communities across Nigeria." 
+      />
       {/* 1. OPENING SECTION (EMOTIONAL + BIG IDEA) */}
       <section className="relative bg-green-900 py-32 overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1529156069898-49953eb1b5a4?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
