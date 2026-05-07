@@ -733,7 +733,8 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 src="/candidate.png"
                 alt="Leadership"
-                className="rounded-2xl shadow-2xl w-full max-w-md mx-auto object-cover"
+                className="rounded-2xl shadow-xl mx-auto object-cover max-w-full md:max-w-md bg-slate-50"
+                style={{ imageRendering: 'high-quality', width: 'auto', height: 'auto', maxHeight: '500px' }}
               />
             </div>
             <div className="md:w-1/2 text-center md:text-left">
