@@ -6,7 +6,6 @@ import Volunteer from './pages/Volunteer';
 import Register from './pages/Register';
 import Donate from './pages/Donate';
 import News from './pages/News';
-import NewsArticle from './pages/NewsArticle';
 import Contact from './pages/Contact';
 import Achievements from './pages/Achievements';
 
@@ -22,7 +21,6 @@ export default function App() {
           <Route path="register" element={<Register />} />
           <Route path="donate" element={<Donate />} />
           <Route path="news" element={<News />} />
-          <Route path="news/:id" element={<NewsArticle />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

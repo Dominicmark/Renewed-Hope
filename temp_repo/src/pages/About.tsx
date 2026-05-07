@@ -1,38 +1,6 @@
-import { motion, useInView, useAnimation } from 'motion/react';
+import { motion } from 'motion/react';
 import { Target, Eye, Heart, Users, ShieldCheck, Zap, Megaphone, BookOpen, Globe, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useRef, useEffect, useState } from 'react';
-
-const CountUp = ({ end, suffix = "", duration = 2 }: { end: number, suffix?: string, duration?: number }) => {
-  const [count, setCount] = useState(0);
-  const nodeRef = useRef(null);
-  const inView = useInView(nodeRef, { once: true });
-
-  useEffect(() => {
-    if (inView) {
-      let startTime: number | null = null;
-      const animateCount = (timestamp: number) => {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-        
-        // Ease out quad
-        const easeProgress = progress * (2 - progress);
-        
-        setCount(Math.floor(easeProgress * end));
-        
-        if (progress < 1) {
-          requestAnimationFrame(animateCount);
-        } else {
-            setCount(end);
-        }
-      };
-      
-      requestAnimationFrame(animateCount);
-    }
-  }, [end, duration, inView]);
-
-  return <span ref={nodeRef}>{count.toLocaleString()}{suffix}</span>;
-}
 
 export default function About() {
   return (
@@ -241,7 +209,7 @@ export default function About() {
 
       {/* 7. IMPACT STATEMENT */}
       <section className="py-24 bg-green-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778124445/People_happy_in_Lagos_street_202605070426_frvngy.jpg')] bg-cover bg-center opacity-20 mix-blend-luminosity"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">The Momentum is Building.</h2>
           <p className="text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed mb-12 font-light">
@@ -250,19 +218,19 @@ export default function About() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-green-800/50 pt-12">
             <div>
-              <div className="text-5xl font-extrabold text-green-400 mb-2"><CountUp end={36} suffix="+" /></div>
+              <div className="text-5xl font-extrabold text-green-400 mb-2">36+</div>
               <div className="text-lg text-green-100">States Reached</div>
             </div>
             <div>
-              <div className="text-5xl font-extrabold text-green-400 mb-2"><CountUp end={774} /></div>
+              <div className="text-5xl font-extrabold text-green-400 mb-2">774</div>
               <div className="text-lg text-green-100">Local Governments</div>
             </div>
             <div>
-              <div className="text-5xl font-extrabold text-green-400 mb-2"><CountUp end={500} suffix="k+" /></div>
+              <div className="text-5xl font-extrabold text-green-400 mb-2">500k+</div>
               <div className="text-lg text-green-100">Active Volunteers</div>
             </div>
             <div>
-              <div className="text-5xl font-extrabold text-green-400 mb-2"><CountUp end={1} /></div>
+              <div className="text-5xl font-extrabold text-green-400 mb-2">1</div>
               <div className="text-lg text-green-100">United Vision</div>
             </div>
           </div>

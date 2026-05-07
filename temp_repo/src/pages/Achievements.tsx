@@ -1,44 +1,13 @@
-import { motion, useInView } from 'motion/react';
+import { motion } from 'motion/react';
 import { TrendingUp, Building2, GraduationCap, ShieldCheck, Factory, HeartHandshake, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useRef, useEffect, useState } from 'react';
-
-const CountUp = ({ end, decimals = 0, suffix = "", prefix = "", duration = 2 }: { end: number, decimals?: number, suffix?: string, prefix?: string, duration?: number }) => {
-  const [count, setCount] = useState(0);
-  const nodeRef = useRef(null);
-  const inView = useInView(nodeRef, { once: true });
-
-  useEffect(() => {
-    if (inView) {
-      let startTime: number | null = null;
-      const animateCount = (timestamp: number) => {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-        
-        const easeProgress = progress * (2 - progress);
-        
-        setCount(easeProgress * end);
-        
-        if (progress < 1) {
-          requestAnimationFrame(animateCount);
-        } else {
-            setCount(end);
-        }
-      };
-      
-      requestAnimationFrame(animateCount);
-    }
-  }, [end, duration, inView]);
-
-  return <span ref={nodeRef}>{prefix}{count.toFixed(decimals)}{suffix}</span>;
-}
 
 export default function Achievements() {
   return (
     <div className="bg-white">
       {/* 1. HERO SECTION (STRONG OPENING) */}
       <section className="relative bg-slate-950 py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778124667/People_happy_in_Lagos_street_202605070430_x3uuq2.jpg')] bg-cover bg-center opacity-20 mix-blend-luminosity"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=2059&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-luminosity"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center z-10">
           <motion.div
@@ -80,28 +49,25 @@ export default function Achievements() {
         </div>
       </section>
 
-      {/* NIGERIA PROGRESS INDICATORS */}
+      {/* PROGRESS IN NUMBERS (OPTIONAL ADD-ON) */}
       <section className="py-16 bg-green-50 border-y border-green-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Nigeria Progress Indicators</h2>
-          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-extrabold text-green-700 mb-2"><CountUp end={3.4} decimals={1} suffix="%" /></div>
+              <div className="text-4xl md:text-5xl font-extrabold text-green-700 mb-2">3.4%</div>
               <div className="text-sm font-bold text-gray-600 uppercase tracking-wider">GDP Growth</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-extrabold text-green-700 mb-2"><CountUp prefix="$" end={1} suffix="B+" /></div>
-              <div className="text-sm font-bold text-gray-600 uppercase tracking-wider">Foreign Investment Inflow</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-green-700 mb-2">$14B+</div>
+              <div className="text-sm font-bold text-gray-600 uppercase tracking-wider">FDI Inflow</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-extrabold text-green-700 mb-2"><CountUp end={62} suffix="%" /></div>
-              <div className="text-sm font-bold text-gray-600 uppercase tracking-wider">Youth Population</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-green-700 mb-2">1.2M</div>
+              <div className="text-sm font-bold text-gray-600 uppercase tracking-wider">Students Supported</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-extrabold text-green-700 mb-2"><CountUp end={45} suffix="M+" /></div>
-              <div className="text-sm font-bold text-gray-600 uppercase tracking-wider">Small Businesses Driving Local Economies</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-green-700 mb-2">15M</div>
+              <div className="text-sm font-bold text-gray-600 uppercase tracking-wider">Households Reached</div>
             </div>
           </div>
         </div>

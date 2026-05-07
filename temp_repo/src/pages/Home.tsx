@@ -1,106 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Users, Target, TrendingUp, HeartHandshake, ArrowRight, ChevronRight, Video, X } from 'lucide-react';
+import { Users, Target, TrendingUp, HeartHandshake, ArrowRight, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  
-  // Direct Cloudinary MP4 URL for native playback
-  const cloudinaryVideoUrl = "https://res.cloudinary.com/dbbw8jsjc/video/upload/WhatsApp_Video_2026-05-05_at_9.46.25_AM_qalaey.mp4"; 
-  const cloudinaryPosterUrl = "https://res.cloudinary.com/dbbw8jsjc/video/upload/WhatsApp_Video_2026-05-05_at_9.46.25_AM_qalaey.jpg";
-
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isGalleryHovered, setIsGalleryHovered] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -350, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 350, behavior: 'smooth' });
-    }
-  };
-
-  // Gallery Photos (You can easily add new Cloudinary links here without changing the massive UI code)
-  const galleryImages = [
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.29_AM_2_ndejuu.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.29_AM_tnyqdc.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.29_AM_1_ettpf3.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082217/WhatsApp_Image_2026-05-05_at_9.46.27_AM_2_mbith0.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.27_AM_3_fmnpzh.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082215/WhatsApp_Image_2026-05-05_at_9.46.33_AM_c8oy8q.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082214/WhatsApp_Image_2026-05-05_at_9.46.34_AM_cyyipz.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082214/WhatsApp_Image_2026-05-05_at_9.46.33_AM_1_bclwld.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.27_AM_3_fmnpzh.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082215/WhatsApp_Image_2026-05-05_at_9.46.30_AM_1_dquvc3.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082214/WhatsApp_Image_2026-05-05_at_9.46.34_AM_1_zs7un9.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082214/WhatsApp_Image_2026-05-05_at_9.46.31_AM_jozut6.jpg",
-    "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082214/WhatsApp_Image_2026-05-05_at_9.46.35_AM_itlfgj.jpg"
-  ];
-
-  useEffect(() => {
-    if (isGalleryHovered) return;
-    
-        // Auto slide gallery every 4 seconds
-    const intervalId = setInterval(() => {
-      if (scrollContainerRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-        
-        // If we reached the end (with a 20px tolerance)
-        if (scrollLeft + clientWidth >= scrollWidth - 20) {
-          scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          // Scroll approximately the width of one item + gap (w-72/80/96 is roughly 300-400px)
-          scrollContainerRef.current.scrollBy({ left: 350, behavior: 'smooth' });
-        }
-      }
-    }, 4000);
-    
-    return () => clearInterval(intervalId);
-  }, [isGalleryHovered]);
-
-  useEffect(() => {
-    // Autoplay when scrolled into view
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && videoRef.current) {
-            // Attempt to play with volume on
-            videoRef.current.volume = 1;
-            videoRef.current.muted = false;
-            
-            videoRef.current.play().catch(e => {
-              console.log("Unmuted autoplay prevented by browser. Falling back to muted playback.", e);
-              // Fallback to muted if browser blocks unmuted autoplay
-              if (videoRef.current) {
-                videoRef.current.muted = true;
-                videoRef.current.play().catch(err => console.log("Autoplay entirely prevented:", err));
-              }
-            });
-          } else if (!entry.isIntersecting && videoRef.current) {
-            videoRef.current.pause();
-          }
-        });
-      },
-      { threshold: 0.6 } // Play when 60% of the video is visible
-    );
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
-    };
-  }, []);
-
   return (
     <div className="flex flex-col w-full">
       {/* HERO SECTION */}
@@ -515,19 +417,19 @@ export default function Home() {
 
           <div className="grid gap-8 md:grid-cols-3">
             {/* Card 1 */}
-            <Link to="/news/mandate-for-continuity" className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer block">
+            <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
               <div className="relative h-56 w-full overflow-hidden">
-                <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.29_AM_2_ndejuu.jpg" alt="Press Briefing in Abuja" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/pressbriefing/800/600'; }} referrerPolicy="no-referrer" />
+                <img src="/activity-1.png" alt="Lagos Event" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/lagosevent/800/600'; }} />
                 <div className="absolute top-4 right-4 bg-white px-4 py-1.5 rounded-full text-blue-700 text-xs font-bold shadow-sm">
-                  Abuja
+                  Lagos
                 </div>
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <p className="text-green-700 font-bold text-sm mb-3">May 03, 2026</p>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-green-700 transition-colors">Press Briefing: A Mandate for Continuity</h3>
-                <p className="text-gray-600 text-base flex-grow">Director General Alhaji Jaafaru Y. Sa'ad addresses the press, mobilizing grassroots support for President Tinubu's reelection to solidify ongoing infrastructure and economic reforms.</p>
+                <p className="text-green-700 font-bold text-sm mb-3">Oct 12, 2023</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-green-700 transition-colors">Youth Townhall & PVC Sensitization Drive</h3>
+                <p className="text-gray-600 text-base flex-grow">Mobilizing young voters to understand their civic duties and ensuring mass registration across local governments.</p>
               </div>
-            </Link>
+            </div>
 
             {/* Card 2 */}
             <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
@@ -560,160 +462,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* SECTION 6.5: FEATURED VIDEO MESSAGE */}
-      <section className="py-20 bg-black text-white relative overflow-hidden border-y border-gray-800">
-        {/* Technical Grid Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f30_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f30_1px,transparent_1px)] bg-[size:48px_48px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="flex items-center justify-center gap-2 text-red-500 mb-4">
-              <Video className="w-6 h-6" />
-              <span className="font-bold uppercase tracking-widest">RHGI TV</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-black mb-4">The Vision for Tomorrow</h2>
-            <p className="text-xl text-gray-400">Watch the latest address from our leadership and see the movement in motion.</p>
-          </div>
-
-          <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-gray-800 bg-black">
-            <div 
-              className="aspect-video w-full relative group cursor-pointer"
-              onClick={() => {
-                // Failsafe: If they click the video, ensure it plays and is unmuted
-                if (videoRef.current) {
-                  videoRef.current.muted = false;
-                  videoRef.current.volume = 1;
-                  videoRef.current.play();
-                }
-              }}
-            >
-              <video 
-                ref={videoRef}
-                src={cloudinaryVideoUrl}
-                poster={cloudinaryPosterUrl}
-                controls
-                playsInline
-                loop
-                className="w-full h-full object-cover rounded-3xl"
-              ></video>
-              
-              {/* Overlay elements only visible when hovered/paused */}
-              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-gray-900 via-gray-900/5 to-transparent opacity-60"></div>
-              
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-                 {/* Visual cue that clicking unmutes/plays if it was blocked */}
-                 <div className="bg-black/50 backdrop-blur-md px-4 py-2 rounded-full text-white text-sm font-bold tracking-widest border border-white/20">
-                   TAP TO UNMUTE / PLAY
-                 </div>
-              </div>
-
-              <div className="absolute bottom-0 left-0 w-full p-6 sm:p-8 flex justify-between items-end pointer-events-none">
-                <div>
-                  <div className="inline-block px-3 py-1 bg-red-600 text-white text-xs font-bold rounded-full mb-3 uppercase tracking-wider shadow-lg">
-                    Featured Broadcast
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <Link to="/news" className="inline-flex items-center gap-2 text-green-400 font-bold hover:text-green-300 transition-colors">
-              Watch more videos on our News page <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 6.6: PHOTO GALLERY SLIDER */}
-      <section className="py-24 bg-black border-b border-gray-800 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between">
-            <div>
-              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Moments in Motion</h2>
-              <p className="mt-2 text-xl text-gray-400">A visual journey through our grassroots movement across the nation.</p>
-            </div>
-            <div className="mt-4 md:mt-0 flex gap-2">
-              <button 
-                onClick={scrollLeft}
-                className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 hover:border-gray-500 transition-colors"
-              >
-                <ChevronRight className="w-5 h-5 rotate-180 text-gray-400" />
-              </button>
-              <button 
-                onClick={scrollRight}
-                className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 hover:border-gray-500 transition-colors"
-              >
-                <ChevronRight className="w-5 h-5 text-gray-400" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Horizontal Scrolling Gallery */}
-        <div 
-          ref={scrollContainerRef}
-          className="flex overflow-x-auto gap-6 px-4 sm:px-6 lg:px-8 pb-8 snap-x snap-mandatory hide-scrollbar" 
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          onMouseEnter={() => setIsGalleryHovered(true)}
-          onMouseLeave={() => setIsGalleryHovered(false)}
-          onTouchStart={() => setIsGalleryHovered(true)}
-          onTouchEnd={() => setIsGalleryHovered(false)}
-        >
-          {galleryImages.map((src, index) => (
-            <motion.div 
-              key={index}
-              className="flex-none w-72 sm:w-80 md:w-96 aspect-[4/5] relative rounded-3xl overflow-hidden snap-center group shadow-md cursor-pointer"
-              whileHover={{ scale: 0.98 }}
-              transition={{ duration: 0.3 }}
-              onClick={() => setSelectedImage(src)}
-            >
-              <img 
-                src={src} 
-                alt={`Gallery ${index}`} 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Fullscreen Image Modal */}
-        {selectedImage && (
-          <div 
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8 backdrop-blur-sm"
-            onClick={() => setSelectedImage(null)}
-          >
-            <button 
-              className="absolute top-4 right-4 sm:top-8 sm:right-8 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-2 transition-colors z-10"
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelectedImage(null);
-              }}
-            >
-              <X className="w-8 h-8" />
-            </button>
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              className="relative w-full max-w-5xl max-h-full flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img 
-                src={selectedImage} 
-                alt="Fullscreen gallery view" 
-                className="max-w-full max-h-[85vh] object-contain rounded-2xl" 
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
-          </div>
-        )}
       </section>
 
       {/* SECTION 7: LEADERSHIP / FACE OF MOVEMENT */}

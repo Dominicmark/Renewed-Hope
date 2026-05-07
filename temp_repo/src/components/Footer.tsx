@@ -18,7 +18,7 @@ export default function Footer() {
               A people-driven movement committed to mobilizing communities, amplifying voices, and supporting leadership that delivers real progress.
             </p>
             <div className="flex space-x-4">
-              <a href="https://web.facebook.com/TheRHGI" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <span className="sr-only">Facebook</span>
                 <Facebook className="h-5 w-5" />
               </a>
@@ -26,7 +26,7 @@ export default function Footer() {
                 <span className="sr-only">Twitter</span>
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/rhgrassroots_initiative/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <span className="sr-only">Instagram</span>
                 <Instagram className="h-5 w-5" />
               </a>
@@ -57,19 +57,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">House 38A Amal Pepple Estate, Gosa Abuja Nig.</span>
+                <span className="text-gray-400 text-sm">123 Renewed Hope Avenue, Abuja, Nigeria</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">+234 708 280 4446</span>
-              </li>
-              <li className="flex items-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="h-5 w-5 mr-2 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">+234 806 837 8633 (WhatsApp)</span>
+                <span className="text-gray-400 text-sm">+234 800 000 0000</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">renewedhopegrassrootinitiative@gmail.com</span>
+                <span className="text-gray-400 text-sm">info@rhgi.org.ng</span>
               </li>
             </ul>
           </div>
