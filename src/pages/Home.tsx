@@ -776,11 +776,11 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <img src="/team1.jpeg" alt="Team Member" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778254005/team1_bart5t.jpg" alt="Dr. Saad Jafaru Galadiman" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-1">Sarah Johnson</h3>
-                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">Campaign Manager</p>
+                <h3 className="text-2xl font-bold text-white mb-1">Dr. Saad Jafaru Galadiman</h3>
+                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">DIRECTOR GENERAL</p>
                 <p className="text-green-50 text-sm leading-relaxed flex-grow">Leading our strategic initiatives and coordinating nationwide outreach programs.</p>
               </div>
             </div>
@@ -792,11 +792,11 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <img src="/team2.jpeg" alt="Team Member" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778254554/team1e_zugntq.jpg" alt="MAHE SHEHU AHMED, PHD, MNI" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-1">David Okeke</h3>
-                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">Director of Comms</p>
+                <h3 className="text-2xl font-bold text-white mb-1">Mahe Shehu Ahmed, PhD, MNI</h3>
+                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">Assistant Deputy DG (North)</p>
                 <p className="text-green-50 text-sm leading-relaxed flex-grow">Ensuring our message of progress and unity reaches every corner of the nation.</p>
               </div>
             </div>
@@ -808,11 +808,11 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <img src="/team3.jpeg" alt="Team Member" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778254005/team1-yt_yfpru6.jpg" alt="PROFESSOR STEVE EGBO" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-1">Aisha Bello</h3>
-                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">Grassroots Coord</p>
+                <h3 className="text-2xl font-bold text-white mb-1">Professor Steve Egbo</h3>
+                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">Assistant Deputy DG (South)</p>
                 <p className="text-green-50 text-sm leading-relaxed flex-grow">Mobilizing local communities and building strong foundations at the ward level.</p>
               </div>
             </div>
