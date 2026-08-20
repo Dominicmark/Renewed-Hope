@@ -8,7 +8,7 @@ export default function News() {
       id: 1,
       title: 'Press Briefing: A Mandate for Continuity',
       date: 'May 03, 2026',
-      excerpt: "Director General Alhaji Jaafaru Y. Sa'ad addresses the press, mobilizing grassroots support for President Tinubu's reelection. The briefing highlights recent economic progress, including foreign exchange reserve growth and structural reforms, urging Nigerians to support the administration for another four years.",
+      excerpt: "Director General Alhaji Awwal Abdullahi Aliyu addresses the press, mobilizing grassroots support for President Tinubu's reelection. The briefing highlights recent economic progress, including foreign exchange reserve growth and structural reforms, urging Nigerians to support the administration for another four years.",
       image: 'https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.29_AM_2_ndejuu.jpg',
       category: 'Press Briefing',
       link: '/news/mandate-for-continuity'
@@ -18,7 +18,7 @@ export default function News() {
   const videoUpdates = [
     {
       id: 1,
-      title: 'Arise News Coverage: RHGI DG Briefs Press on Mandate for Continuity',
+      title: 'Arise News Coverage: Tinubu Again DG Briefs Press on Mandate for Continuity',
       videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1778119783/WhatsApp_Video_2026-05-05_at_9.46.25_AM_1_tv7twv.mp4',
     },
     {
@@ -28,7 +28,7 @@ export default function News() {
     },
     {
       id: 3,
-      title: 'NTA Highlights: Economic Progress & Reforms Noted in RHGI Press Briefing',
+      title: 'NTA Highlights: Economic Progress & Reforms Noted in Tinubu Again Press Briefing',
       videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1778119834/WhatsApp_Video_2026-05-05_at_9.46.24_AM_nkdcie.mp4',
     }
   ];
@@ -41,7 +41,7 @@ export default function News() {
       url: 'https://thenationonlineng.net/group-lauds-fg-for-reforms-economic-gains/',
       date: 'May 3, 2026',
       image: 'https://cdn.thenationonlineng.net/wp-content/uploads/2026/05/04062348/Renewed-Hope-Grassroots-Initiatives.jpg',
-      excerpt: 'A grassroots group, Renewed Hope Grassroots Initiative (RHGI), has commended the Federal Government over the positive impact of its economic reforms on ordinary Nigerians.'
+      excerpt: 'A grassroots group, Tinubu Again, has commended the Federal Government over the positive impact of its economic reforms on ordinary Nigerians.'
     },
     {
       id: 2,
@@ -50,7 +50,7 @@ export default function News() {
       url: 'https://pointblanknews.com/pbn/exclusive/2027-group-backs-tinubus-re-election-rejects-one-term-presidency-calls/',
       date: 'May 3, 2026',
       image: 'https://pointblanknews.com/pbn/wp-content/uploads/2026/05/IMG_20260503_123433_880@-349782201-scaled.jpg',
-      excerpt: 'As political realignments continue ahead of 2027, the Renewed Hope Grassroots Initiative strongly supports the re-election of President Bola Tinubu to consolidate his achievements.'
+      excerpt: 'As political realignments continue ahead of 2027, Tinubu Again strongly supports the re-election of President Bola Tinubu to consolidate his achievements.'
     },
     {
       id: 3,
@@ -68,7 +68,7 @@ export default function News() {
       url: 'https://www.vanguardngr.com/2026/05/group-backs-tinubus-2027-re-election-rejects-one-term-agenda/',
       date: 'May 3, 2026',
       image: 'https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.29_AM_2_ndejuu.jpg',
-      excerpt: 'The Renewed Hope Grassroots Initiative has rejected calls for a one-term presidency, emphasizing that reforms require an eight-year tenure to fully materialize.'
+      excerpt: 'Tinubu Again has rejected calls for a one-term presidency, emphasizing that reforms require an eight-year tenure to fully materialize.'
     },
     {
       id: 5,
@@ -77,16 +77,16 @@ export default function News() {
       url: 'https://naijablitznews.com/2026/05/03/group-rallies-behind-tinubu-pushes-continuity-mandate-for-2027/',
       date: 'May 3, 2026',
       image: 'https://naijablitznews.com/wp-content/uploads/2026/05/20260503_1218521-1000x600.jpg',
-      excerpt: 'Dr. Jaafaru Y. Sa\'ad, Director General of RHGI, addresses the press to rally support for President Tinubu and ensure grassroots mobilization ahead of the 2027 elections.'
+      excerpt: 'Dr. Jaafaru Y. Sa\'ad, Director General of Tinubu Again, addresses the press to rally support for President Tinubu and ensure grassroots mobilization ahead of the 2027 elections.'
     },
     {
       id: 6,
       source: 'The Sun',
-      title: '2027: Tinubu not afraid of contest – RHGI',
+      title: '2027: Tinubu not afraid of contest – Tinubu Again',
       url: 'https://thesun.ng/2027-tinubu-not-afraid-of-contest-rhgi/',
       date: 'May 3, 2026',
       image: 'https://d1jcea4y7xhp7l.cloudfront.net/wp-content/uploads/2026/04/Bola-Tinubu.png',
-      excerpt: 'Clarifying the group\'s stance, the RHGI Director General noted that while asking for continuity, President Tinubu remains unafraid of any electoral contest.'
+      excerpt: 'Clarifying the group\'s stance, Tinubu Again Director General noted that while asking for continuity, President Tinubu remains unafraid of any electoral contest.'
     },
     {
       id: 7,
@@ -139,7 +139,7 @@ export default function News() {
             <div>
               <div className="flex items-center gap-2 text-red-500 mb-2">
                 <Video className="w-5 h-5" />
-                <span className="font-bold uppercase tracking-wider text-sm">RHGI TV</span>
+                <span className="font-bold uppercase tracking-wider text-sm">Tinubu Again TV</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Emerging Stories</h2>
               <p className="mt-2 text-gray-400">Watch the movement unfold live across the nation.</p>

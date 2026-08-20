@@ -40,7 +40,7 @@ export default function About() {
     <div className="bg-white">
       <SEO 
         title="About Us" 
-        description="Learn about RH Grassroots Initiative, our mission, vision, and how we are empowering local communities across Nigeria." 
+        description="Learn about Tinubu Again, our mission, vision, and how we are empowering local communities across Nigeria." 
       />
       {/* 1. OPENING SECTION (EMOTIONAL + BIG IDEA) */}
       <section className="relative bg-green-900 py-32 overflow-hidden">
@@ -81,7 +81,7 @@ export default function About() {
               </h3>
               <div className="space-y-6 text-lg text-gray-600">
                 <p>
-                  The Renewed Hope Grassroots Initiative (RHGI) is a nationwide mobilization platform connecting leadership directly with everyday people. We are focused on awareness, engagement, and decisive action.
+                  Tinubu Again is a nationwide mobilization platform connecting leadership directly with everyday people. We are focused on awareness, engagement, and decisive action.
                 </p>
                 <p>
                   Our movement is radically inclusive. We are the youth, the women, the professionals, the artisans, and the students. We represent the true voice of the people, united by a shared desire for a better nation.

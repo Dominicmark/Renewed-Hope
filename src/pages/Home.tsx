@@ -106,7 +106,7 @@ export default function Home() {
     <div className="flex flex-col w-full">
       <SEO 
         title="Home" 
-        description="RH Grassroots Initiative works directly with local communities across Nigeria to fund projects, foster education, and drive structural reforms." 
+        description="Tinubu Again works directly with local communities across Nigeria to fund projects, foster education, and drive structural reforms." 
       />
       {/* HERO SECTION */}
       <section className="relative bg-[#f4f4f5] overflow-hidden flex flex-col lg:block">
@@ -145,27 +145,31 @@ export default function Home() {
             >
               <div className="flex flex-col items-start mb-4">
                 <div className="flex flex-row items-center gap-2 sm:gap-3">
-                  <img src="/logo.png" alt="RHGI Logo" className="h-32 sm:h-56 md:h-64 w-auto object-contain shrink-0" />
-                  <div className="flex flex-col items-start text-left">
-                    <span className="font-black text-3xl sm:text-5xl md:text-7xl text-gray-900 tracking-tight leading-none mb-1 sm:mb-2 whitespace-nowrap">RENEWED HOPE</span>
-                    <span className="font-bold text-[0.75rem] sm:text-xl md:text-3xl text-green-700 tracking-[0.15em] uppercase whitespace-nowrap">Grassroots Initiative</span>
+                  <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787244780/Tinubuagain_logo_png_m2zizj.png" alt="Tinubu Again Logo" className="h-32 sm:h-56 md:h-64 w-auto object-contain shrink-0" />
+                  <div className="flex flex-col items-stretch text-left">
+                    <span className="font-black text-3xl sm:text-5xl md:text-7xl text-green-700 tracking-tight leading-none mb-1 sm:mb-2 whitespace-nowrap text-center">Tinubu Again</span>
+                    <div className="flex items-center w-full mt-1 sm:mt-2">
+                      <div className="flex-grow h-[2px] sm:h-[3px] bg-red-600 rounded-full"></div>
+                      <span className="font-bold text-[1.25rem] sm:text-2xl md:text-4xl text-red-600 tracking-[0.15em] mx-3 sm:mx-5 whitespace-nowrap">2027</span>
+                      <div className="flex-grow h-[2px] sm:h-[3px] bg-red-600 rounded-full"></div>
+                    </div>
                   </div>
                 </div>
               </div>
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block xl:inline">
-                  A Movement Built on{' '}
+                  Consolidating the{' '}
                   <span className="relative inline-block text-green-600">
-                    Hope.
+                    Future.
                     <svg className="absolute w-[110%] h-[0.3em] -bottom-[0.1em] -left-[5%] text-red-600" viewBox="0 0 100 10" preserveAspectRatio="none">
                       <path d="M2,8 Q45,1 98,7" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" />
                     </svg>
                   </span>
                 </span>{' '}
-                <span className="block text-gray-900 xl:inline mt-2 xl:mt-0">Powered by the People.</span>
+                <span className="block text-gray-900 xl:inline mt-2 xl:mt-0">Sustaining the Progress.</span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl lg:mx-0">
-                The Renewed Hope Grassroots Initiative is a people-driven movement committed to mobilizing communities, amplifying voices, and supporting leadership that delivers real progress.
+                Powered by the people, securing our tomorrow. Tinubu Again is a grassroots movement committed to mobilizing communities and supporting leadership that delivers real progress.
               </p>
 
               {/* DESKTOP BUTTONS */}
@@ -263,7 +267,7 @@ export default function Home() {
         <div className="flex whitespace-nowrap animate-marquee w-max">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center justify-around w-max">
-              <span className="mx-8 font-bold tracking-widest text-lg md:text-xl uppercase">RENEWED HOPE</span>
+              <span className="mx-8 font-bold tracking-widest text-lg md:text-xl uppercase">Tinubu Again</span>
               <span className="mx-8 text-green-300">•</span>
               <span className="mx-8 font-bold tracking-widest text-lg md:text-xl uppercase">LEADERSHIP THAT DELIVERS</span>
               <span className="mx-8 text-green-300">•</span>
@@ -296,7 +300,7 @@ export default function Home() {
               Uniting Communities. Driving Real Change.
             </p>
             <p className="mt-4 max-w-3xl text-xl text-gray-500 mx-auto">
-              Across cities, towns, and local communities, a new wave of engagement is rising. The Renewed Hope Grassroots Initiative brings together everyday citizens, youth, professionals, and community leaders with one shared goal — to build a stronger, more inclusive future.
+              Across cities, towns, and local communities, a new wave of engagement is rising. Tinubu Again brings together everyday citizens, youth, professionals, and community leaders with one shared goal — to build a stronger, more inclusive future.
             </p>
             <p className="mt-4 max-w-3xl text-lg text-gray-600 mx-auto font-medium">
               We believe progress happens when people are informed, empowered, and actively involved.
@@ -431,7 +435,7 @@ export default function Home() {
                 A People-Driven Initiative
               </h2>
               <p className="mt-4 text-lg text-green-100 max-w-2xl">
-                The Renewed Hope Grassroots Initiative (RHGI) is built on the belief that real transformation begins at the grassroots level.
+                Tinubu Again is built on the belief that real transformation begins at the grassroots level.
               </p>
               <p className="mt-4 text-lg text-green-100 max-w-2xl">
                 We are a collective of passionate individuals committed to supporting leadership that prioritizes development, unity, and national progress.
@@ -530,7 +534,7 @@ export default function Home() {
               <div className="p-6 flex flex-col flex-grow">
                 <p className="text-green-700 font-bold text-sm mb-3">May 03, 2026</p>
                 <h3 className="text-xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-green-700 transition-colors">Press Briefing: A Mandate for Continuity</h3>
-                <p className="text-gray-600 text-base flex-grow">Director General Alhaji Jaafaru Y. Sa'ad addresses the press, mobilizing grassroots support for President Tinubu's reelection to solidify ongoing infrastructure and economic reforms.</p>
+                <p className="text-gray-600 text-base flex-grow">Director General Alhaji Awwal Abdullahi Aliyu addresses the press, mobilizing grassroots support for President Tinubu's reelection to solidify ongoing infrastructure and economic reforms.</p>
               </div>
             </Link>
 
@@ -577,7 +581,7 @@ export default function Home() {
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="flex items-center justify-center gap-2 text-red-500 mb-4">
               <Video className="w-6 h-6" />
-              <span className="font-bold uppercase tracking-widest">RHGI TV</span>
+              <span className="font-bold uppercase tracking-widest">Tinubu Again TV</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black mb-4">The Vision for Tomorrow</h2>
             <p className="text-xl text-gray-400">Watch the latest address from our leadership and see the movement in motion.</p>
@@ -776,10 +780,10 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778254005/team1_bart5t.jpg" alt="Dr. Saad Jafaru Galadiman" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787237549/WhatsApp_Image_2026-08-19_at_7.56.59_PM_awlnyx.jpg" alt="Alhaji Awwal Abdullahi Aliyu" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-1">Dr. Saad Jafaru Galadiman</h3>
+                <h3 className="text-2xl font-bold text-white mb-1">Alhaji Awwal Abdullahi Aliyu</h3>
                 <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">DIRECTOR GENERAL</p>
                 <p className="text-green-50 text-sm leading-relaxed flex-grow">Leading our strategic initiatives and coordinating nationwide outreach programs.</p>
               </div>

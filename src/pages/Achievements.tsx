@@ -47,7 +47,7 @@ export default function Achievements() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-8 uppercase tracking-widest"
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            The Renewed Hope Agenda
+            Tinubu Again Agenda
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -331,7 +331,7 @@ export default function Achievements() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <h2 className="text-5xl font-extrabold text-gray-900 mb-8 tracking-tight">Be Part of the Progress.</h2>
           <p className="text-2xl text-gray-600 mb-12 leading-relaxed">
-            The Renewed Hope agenda is a collective effort. We need your voice, your energy, and your support to continue driving this vision forward.
+            Tinubu Again agenda is a collective effort. We need your voice, your energy, and your support to continue driving this vision forward.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 

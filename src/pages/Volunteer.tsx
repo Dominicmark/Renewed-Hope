@@ -113,7 +113,7 @@ export default function Volunteer() {
             {[
               {
                 title: "Community Mobilization",
-                desc: "Engage with people locally. Knock on doors, host small gatherings, and spread the message of renewed hope in your neighborhood.",
+                desc: "Engage with people locally. Knock on doors, host small gatherings, and spread the message of Tinubu Again in your neighborhood.",
                 icon: Users
               },
               {
@@ -261,7 +261,7 @@ export default function Volunteer() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <MessageSquare className="w-12 h-12 text-green-200 mx-auto mb-8" />
           <h2 className="text-3xl md:text-4xl font-medium text-gray-900 leading-relaxed mb-8 italic">
-            "I joined RHGI because I was tired of complaining from the sidelines. Being a volunteer gave me a platform to actually do something. The energy is incredible, and the impact we are making in our local ward is real."
+            "I joined Tinubu Again because I was tired of complaining from the sidelines. Being a volunteer gave me a platform to actually do something. The energy is incredible, and the impact we are making in our local ward is real."
           </h2>
           <div className="flex items-center justify-center gap-4">
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold text-xl">

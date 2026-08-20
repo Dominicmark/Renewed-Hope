@@ -7,7 +7,7 @@ interface SEOProps {
   type?: string;
 }
 
-export default function SEO({ title, description, name = "RH Grassroots Initiative", type = "website" }: SEOProps) {
+export default function SEO({ title, description, name = "Tinubu Again", type = "website" }: SEOProps) {
   return (
     <Helmet>
       <title>{title} | {name}</title>

@@ -62,7 +62,7 @@ export default function Contact() {
                 <div>
                   <p className="text-sm font-semibold text-gray-900 uppercase tracking-wider">Address</p>
                   <p className="mt-1 text-lg text-gray-600">
-                    123 Renewed Hope Avenue,<br />
+                    123 Tinubu Again Avenue,<br />
                     Abuja, Nigeria
                   </p>
                 </div>

@@ -8,10 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <img src="/logo.png" alt="RHGI Logo" className="h-12 w-auto bg-white p-1 rounded object-contain shrink-0" />
-              <div className="flex flex-col justify-center">
-                <span className="font-black text-xl leading-none text-white tracking-tight">RENEWED HOPE</span>
-                <span className="font-bold text-[0.65rem] leading-none text-green-500 tracking-[0.15em] mt-1">GRASSROOTS INITIATIVE</span>
+              <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787244780/Tinubuagain_logo_png_m2zizj.png" alt="Tinubu Again Logo" className="h-12 w-auto bg-white p-1 rounded object-contain shrink-0" />
+              <div className="flex flex-col justify-center items-stretch text-center">
+                <span className="font-black text-xl leading-none text-green-500 tracking-tight">TINUBU AGAIN</span>
+                <div className="flex items-center w-full mt-1.5">
+                  <div className="flex-grow h-[2px] bg-red-500 rounded-full"></div>
+                  <span className="font-bold text-[0.75rem] text-red-500 tracking-widest mx-2 whitespace-nowrap">2027</span>
+                  <div className="flex-grow h-[2px] bg-red-500 rounded-full"></div>
+                </div>
               </div>
             </div>
             <p className="text-gray-400 text-sm mb-4">
@@ -76,7 +80,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Renewed Hope Grassroots Initiative. All rights reserved.
+            &copy; {new Date().getFullYear()} Tinubu Again. All rights reserved.
           </p>
         </div>
       </div>

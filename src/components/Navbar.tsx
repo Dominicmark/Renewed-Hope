@@ -23,10 +23,14 @@ export default function Navbar() {
         <div className="flex justify-between h-20 sm:h-24">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center gap-3 sm:gap-4">
-              <img src="/logo.png" alt="RHGI Logo" className="h-14 sm:h-16 w-auto object-contain shrink-0" />
-              <div className="flex flex-col justify-center">
-                <span className="font-black text-xl sm:text-2xl leading-none text-gray-900 tracking-tight">RENEWED HOPE</span>
-                <span className="font-bold text-[0.6rem] sm:text-[0.75rem] leading-none text-green-700 tracking-[0.15em] mt-1.5">GRASSROOTS INITIATIVE</span>
+              <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787244780/Tinubuagain_logo_png_m2zizj.png" alt="Tinubu Again Logo" className="h-14 sm:h-16 w-auto object-contain shrink-0" />
+              <div className="flex flex-col justify-center items-stretch text-center">
+                <span className="font-black text-xl sm:text-2xl leading-none text-green-700 tracking-tight">TINUBU AGAIN</span>
+                <div className="flex items-center w-full mt-1 sm:mt-1.5">
+                  <div className="flex-grow h-[2px] bg-red-600 rounded-full"></div>
+                  <span className="font-bold text-[0.7rem] sm:text-[0.85rem] text-red-600 tracking-widest mx-2 whitespace-nowrap">2027</span>
+                  <div className="flex-grow h-[2px] bg-red-600 rounded-full"></div>
+                </div>
               </div>
             </Link>
           </div>

@@ -40,11 +40,11 @@ export default function NewsArticle() {
   // If we had a real backend, we'd fetch based on the ID.
   // We'll hardcode the content for the "mandate-for-continuity" article right now.
   const article = {
-    title: "PRESS BRIEFING BY THE RENEWED HOPE GRASSROOTS INITIATIVES: A MANDATE FOR CONTINUITY",
+    title: "PRESS BRIEFING BY Tinubu Again: A MANDATE FOR CONTINUITY",
     date: "May 03, 2026",
     category: "Press Briefing",
-    author: "Alhaji Jaafaru Y. Sa'ad",
-    authorRole: "Director General, RHGI",
+    author: "Alhaji Awwal Abdullahi Aliyu",
+    authorRole: "Director General, Tinubu Again",
     authorImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=256&auto=format&fit=crop", // placeholder
     image: "https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.29_AM_2_ndejuu.jpg"
   };
@@ -98,7 +98,7 @@ export default function NewsArticle() {
         {/* Article Body */}
         <div className="prose prose-lg prose-green max-w-none text-gray-700 leading-relaxed space-y-6">
           <p className="font-medium text-xl text-gray-900 leading-snug">
-            Good afternoon, Ladies and Gentlemen of the Press, my name is <strong className="text-green-800">Alhaji Jaafaru Y. Sa'ad</strong>. I am the Director General of the Renewed hope Grassroots Initiatives. We are a group cut across political party lines that are happy and supportive of the work so far done by President Bola Ahmed Tinubu, GCFR.
+            Good afternoon, Ladies and Gentlemen of the Press, my name is <strong className="text-green-800">Alhaji Awwal Abdullahi Aliyu</strong>. I am the Director General of Tinubu Again. We are a group cut across political party lines that are happy and supportive of the work so far done by President Bola Ahmed Tinubu, GCFR.
           </p>
 
           <p>
@@ -134,7 +134,7 @@ export default function NewsArticle() {
           </p>
           
           <p>
-            Also, the government inaugurated the Alternate Education and Renewed Hope National Home-Grown School Feeding Project, aiming to expand its reach to 20 million out-of-school and informal children by 2026.
+            Also, the government inaugurated the Alternate Education and Tinubu Again National Home-Grown School Feeding Project, aiming to expand its reach to 20 million out-of-school and informal children by 2026.
           </p>
 
           <p>
@@ -146,18 +146,18 @@ export default function NewsArticle() {
           </p>
 
           <p className="font-semibold text-lg text-gray-900 border-l-4 border-green-600 pl-6 my-8">
-            It is in the light of these and many others too numerous to mention that we, the members of the Renewed Hope Grass Root Initiatives, RHGI, call all on Nigerians to give President Bola Ahmed Tinubu another four years in 2027 to complete the beautiful work he has been doing. Reforms everywhere in the world comes with a lot of cost. It comes with pains. And like the saying goes, no pains, no gains. Nigerian should endure today for a brighter and better future.
+            It is in the light of these and many others too numerous to mention that we, the members of Tinubu Again, call all on Nigerians to give President Bola Ahmed Tinubu another four years in 2027 to complete the beautiful work he has been doing. Reforms everywhere in the world comes with a lot of cost. It comes with pains. And like the saying goes, no pains, no gains. Nigerian should endure today for a brighter and better future.
           </p>
 
           <p>
-            The Renewed Hope Grassroots Initiative stands firmly in support of President Bola Ahmed Tinubu, GCFR, advocating for the completion of his eight-year tenure to ensure regional equity and the consolidation of the transformative governance he has initiated within the last three years. Through our grassroots-oriented membership structure of <CountUp end={18} /> National Working Committee Members, <CountUp end={109} /> Zonal Directors, <CountUp end={6066} /> LGA Executives, <CountUp end={61663} /> Ward Executives, and <CountUp end={884225} /> Unit Representatives cutting across the <CountUp end={36} /> States and FCT, <CountUp end={774} /> LGAs, <CountUp end={8809} /> Wards, and <CountUp end={176845} /> polling units of the Federation, we aim to reach and mobilize <CountUp end={3000000} /> Nigerian Voters for President Bola Ahmed Tinubu reelection bid and ensuring a hitch free coast to power at the presidential election poll. Long live Renewed Hope Grassroots Initiatives, RHGI, and long live the Federal Republic of Nigeria. God bless the members of the fourth estate of the real.
+            Tinubu Again stands firmly in support of President Bola Ahmed Tinubu, GCFR, advocating for the completion of his eight-year tenure to ensure regional equity and the consolidation of the transformative governance he has initiated within the last three years. Through our grassroots-oriented membership structure of <CountUp end={18} /> National Working Committee Members, <CountUp end={109} /> Zonal Directors, <CountUp end={6066} /> LGA Executives, <CountUp end={61663} /> Ward Executives, and <CountUp end={884225} /> Unit Representatives cutting across the <CountUp end={36} /> States and FCT, <CountUp end={774} /> LGAs, <CountUp end={8809} /> Wards, and <CountUp end={176845} /> polling units of the Federation, we aim to reach and mobilize <CountUp end={3000000} /> Nigerian Voters for President Bola Ahmed Tinubu reelection bid and ensuring a hitch free coast to power at the presidential election poll. Long live Tinubu Again, and long live the Federal Republic of Nigeria. God bless the members of the fourth estate of the real.
           </p>
 
           <div className="mt-12 pt-8 border-t border-gray-100 italic">
             <p className="font-bold mb-1">Sincerely,</p>
-            <p className="font-bold text-gray-800">Dr. Jaafaru Y. Sa'ad,</p>
+            <p className="font-bold text-gray-800">Alhaji Awwal Abdullahi Aliyu,</p>
             <p className="text-gray-600">Director General,</p>
-            <p className="text-green-700 font-medium">Renewed Hope Grassroots Initiatives (RHGI).</p>
+            <p className="text-green-700 font-medium">Tinubu Again.</p>
           </div>
         </div>
       </main>

@@ -13,7 +13,7 @@ export default function Register() {
             >
               Join the Movement
             </motion.h1>
-            <p className="mt-2 text-green-100">Fill out the form below to become an official member of RHGI.</p>
+            <p className="mt-2 text-green-100">Fill out the form below to become an official member of Tinubu Again.</p>
           </div>
 
           <div className="p-8 sm:p-12">
