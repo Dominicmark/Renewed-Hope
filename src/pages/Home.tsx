@@ -4,6 +4,44 @@ import { Users, Target, TrendingUp, HeartHandshake, ArrowRight, ChevronRight, Vi
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
 
+function AutoPlayVideo({ src, className, children }: { src: string, className?: string, children?: React.ReactNode }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          videoRef.current?.play().catch(() => {
+            // Autoplay might be blocked if not muted, but we set muted
+          });
+        } else {
+          videoRef.current?.pause();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <>
+      <video
+        ref={videoRef}
+        src={src}
+        controls
+        playsInline
+        muted
+        loop
+        className={className}
+      ></video>
+      {children}
+    </>
+  );
+}
+
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   
@@ -640,7 +678,7 @@ export default function Home() {
             {/* Card 1 */}
             <Link to="/news/mandate-for-continuity" className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer block">
               <div className="relative h-56 w-full overflow-hidden">
-                <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.29_AM_2_ndejuu.jpg" alt="Press Briefing in Abuja" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/pressbriefing/800/600'; }} referrerPolicy="no-referrer" />
+                <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787760868/WhatsApp_Image_2026-08-22_at_8.00.08_PM_xgfe1s.jpg" alt="Press Briefing in Abuja" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/pressbriefing/800/600'; }} referrerPolicy="no-referrer" />
                 <div className="absolute top-4 right-4 bg-white px-4 py-1.5 rounded-full text-blue-700 text-xs font-bold shadow-sm">
                   Abuja
                 </div>
@@ -751,6 +789,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION 7: SHORTS / VERTICAL VIDEOS */}
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h3 className="text-red-700 font-bold tracking-widest uppercase text-sm mb-2">Shorts & Reels</h3>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Activities on the Ground</h2>
+            <p className="text-lg text-slate-500 mt-4 max-w-2xl mx-auto">
+              Watch the latest moments and highlights from our grassroots engagements.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-8">
+            {/* Short 1 - Abuja */}
+            <div className="w-[320px] aspect-[9/16] relative rounded-3xl overflow-hidden shadow-2xl bg-black border border-gray-200 group">
+              <AutoPlayVideo 
+                src="https://res.cloudinary.com/dbbw8jsjc/video/upload/v1787761745/WhatsApp_Video_2026-08-26_at_5.27.46_PM_bq0itj.mp4" 
+                className="w-full h-full object-cover"
+              >
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-blue-700 text-xs font-bold shadow-sm z-10 pointer-events-none">
+                  Abuja
+                </div>
+              </AutoPlayVideo>
+            </div>
+
+            {/* Short 2 */}
+            <div className="w-[320px] aspect-[9/16] relative rounded-3xl overflow-hidden shadow-2xl bg-black border border-gray-200 group">
+              <AutoPlayVideo 
+                src="https://res.cloudinary.com/dbbw8jsjc/video/upload/v1787760875/WhatsApp_Video_2026-08-22_at_8.00.09_PM_dvftx0.mp4" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* SECTION 8: OUR TEAM */}
       <section className="py-24 relative overflow-hidden">
@@ -766,14 +838,14 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-extrabold text-white sm:text-5xl tracking-tight mb-4">Meet Our Team</h2>
+            <h2 className="text-4xl font-extrabold text-white sm:text-5xl tracking-tight mb-4">Board of Trustees</h2>
             <div className="w-24 h-1 bg-green-400 mx-auto rounded-full mb-6" />
             <p className="text-xl text-green-100 max-w-2xl mx-auto font-light">
-              The dedicated individuals working tirelessly behind the scenes to drive our movement forward.
+              The dedicated leadership driving our movement forward.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {/* Team Member 1 */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-b from-green-400 to-green-600 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300 opacity-20" />
@@ -781,12 +853,12 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787237549/WhatsApp_Image_2026-08-19_at_7.56.59_PM_awlnyx.jpg" alt="Alhaji Awwal Abdullahi Aliyu" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787759329/WhatsApp_Image_2026-08-25_at_3.12.50_PM_faubhh.jpg" alt="H.E. Dr. Bello Mohammed Matawalle" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-1">Alhaji Awwal Abdullahi Aliyu</h3>
-                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">DIRECTOR GENERAL</p>
-                <p className="text-green-50 text-sm leading-relaxed flex-grow">Leading our strategic initiatives and coordinating nationwide outreach programs.</p>
+                <h3 className="text-2xl font-bold text-white mb-1">H.E. Dr. Bello Mohammed Matawalle</h3>
+                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">CHAIRMAN, BOARD OF TRUSTEES</p>
+                <p className="text-green-50 text-sm leading-relaxed flex-grow">Guiding force and Convener of the Tinubu Again Movement.</p>
               </div>
             </div>
 
@@ -797,14 +869,12 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <div className="w-full h-full bg-white/10 flex items-center justify-center">
-                      <User className="w-16 h-16 text-white/50" />
-                    </div>
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787762178/Dr.-Oladele-Alake_djjuff.png" alt="Hon. Henry Dele Alake" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-1">Mahe Shehu Ahmed, PhD, MNI</h3>
-                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">Assistant Deputy DG (North)</p>
-                <p className="text-green-50 text-sm leading-relaxed flex-grow">Ensuring our message of progress and unity reaches every corner of the nation.</p>
+                <h3 className="text-2xl font-bold text-white mb-1">Hon. Henry Dele Alake</h3>
+                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">CO-CHAIRMAN, BOARD OF TRUSTEES</p>
+                <p className="text-green-50 text-sm leading-relaxed flex-grow">Collaborating to steer the vision and strategic direction of our movement.</p>
               </div>
             </div>
 
@@ -815,14 +885,12 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <div className="w-full h-full bg-white/10 flex items-center justify-center">
-                      <User className="w-16 h-16 text-white/50" />
-                    </div>
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787766013/WhatsApp-Image-2026-08-19-at-18.08.09_axqgm0.webp" alt="Alh. Ibrahim Kabir Masari" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-1">Professor Steve Egbo</h3>
-                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">Assistant Deputy DG (South)</p>
-                <p className="text-green-50 text-sm leading-relaxed flex-grow">Mobilizing local communities and building strong foundations at the ward level.</p>
+                <h3 className="text-2xl font-bold text-white mb-1">Alh. Ibrahim Kabir Masari</h3>
+                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">VICE-CHAIRMAN</p>
+                <p className="text-green-50 text-sm leading-relaxed flex-grow">Bringing extensive experience and leadership to the Board of Trustees.</p>
               </div>
             </div>
 
@@ -833,14 +901,60 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <div className="w-full h-full bg-white/10 flex items-center justify-center">
-                      <User className="w-16 h-16 text-white/50" />
-                    </div>
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787766766/images_4_tcgyis.jpg" alt="Amb. Victor Adekunle Adeleke" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-1">Michael Adeyemi</h3>
-                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">Policy Advisor</p>
-                <p className="text-green-50 text-sm leading-relaxed flex-grow">Crafting data-driven policies that address the core needs of our citizens.</p>
+                <h3 className="text-2xl font-bold text-white mb-1">Amb. Victor Adekunle Adeleke</h3>
+                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">SECRETARY</p>
+                <p className="text-green-50 text-sm leading-relaxed flex-grow">Ensuring operational excellence and strategic communications.</p>
+              </div>
+            </div>
+
+            {/* Team Member 5 */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-b from-green-400 to-green-600 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300 opacity-20" />
+              <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 text-center border border-white/20 shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col items-center">
+                <div className="relative w-36 h-36 mx-auto mb-6">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787766965/images_5_dqxjcv.jpg" alt="Hon. Mohammed Idris Malagi" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-1">Hon. Mohammed Idris Malagi</h3>
+                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">ASSISTANT SECRETARY</p>
+                <p className="text-green-50 text-sm leading-relaxed flex-grow">Supporting the Secretariat in driving the movement's objectives forward.</p>
+              </div>
+            </div>
+
+            {/* Team Member 6 */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-b from-green-400 to-green-600 rounded-3xl transform -rotate-3 group-hover:-rotate-6 transition-transform duration-300 opacity-20" />
+              <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 text-center border border-white/20 shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col items-center">
+                <div className="relative w-36 h-36 mx-auto mb-6">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787766208/images_3_dzmqfi.jpg" alt="IGP Olatunji Rilwan Disu" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-1">IGP Olatunji Rilwan Disu</h3>
+                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">MEMBER</p>
+                <p className="text-green-50 text-sm leading-relaxed flex-grow">Contributing critical insights and strategic direction to the board.</p>
+              </div>
+            </div>
+
+            {/* Team Member 7 */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-b from-green-400 to-green-600 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300 opacity-20" />
+              <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 text-center border border-white/20 shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col items-center">
+                <div className="relative w-36 h-36 mx-auto mb-6">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787766551/images22_q1nsrk.jpg" alt="Hon. Mohammed Sani Sidi" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-1">Hon. Mohammed Sani Sidi</h3>
+                <p className="text-green-300 font-medium text-sm mb-4 uppercase tracking-wider">MEMBER</p>
+                <p className="text-green-50 text-sm leading-relaxed flex-grow">Providing steadfast support and governance for the movement.</p>
               </div>
             </div>
           </div>
