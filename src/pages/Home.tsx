@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Users, Target, TrendingUp, HeartHandshake, ArrowRight, ChevronRight, Video, X } from 'lucide-react';
+import { Users, Target, TrendingUp, HeartHandshake, ArrowRight, ChevronRight, Video, X, User } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
 
@@ -286,6 +286,120 @@ export default function Home() {
         </div>
       </div>
 
+      {/* SECTION 1.5: LEADERSHIP AND INSPIRATION (Dr. Bello) */}
+      <section className="py-24 bg-white overflow-hidden border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-12 xl:gap-20">
+            
+            {/* Left side: Images Collage */}
+            <div className="w-full lg:w-[55%] relative">
+              <div className="grid grid-cols-2 gap-4">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="col-span-2 relative h-[450px] rounded-3xl overflow-hidden shadow-2xl"
+                >
+                  <img 
+                    src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787759329/WhatsApp_Image_2026-08-25_at_3.12.50_PM_faubhh.jpg" 
+                    alt="His Excellency, Dr. Bello Mohammed Matawalle" 
+                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-8 left-8 right-8 text-white pointer-events-none">
+                    <p className="text-sm font-bold text-green-400 uppercase tracking-widest mb-2">Our Leadership</p>
+                    <p className="text-3xl sm:text-4xl font-extrabold leading-tight">H.E. Dr. Bello Mohammed Matawalle</p>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1, duration: 0.5 }}
+                  className="h-48 sm:h-64 rounded-2xl overflow-hidden shadow-lg relative group"
+                >
+                  <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787759329/WhatsApp_Image_2026-08-25_at_3.12.59_PM_p0yxej.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  <div className="absolute inset-0 bg-green-900/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+                </motion.div>
+                
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  className="h-48 sm:h-64 rounded-2xl overflow-hidden shadow-lg relative group"
+                >
+                  <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787759329/WhatsApp_Image_2026-08-25_at_3.12.57_PM_yvi8i5.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  <div className="absolute inset-0 bg-green-900/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  className="h-48 sm:h-64 rounded-2xl overflow-hidden shadow-lg relative group"
+                >
+                  <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787759329/WhatsApp_Image_2026-08-25_at_3.12.58_PM_sno4nn.jpg" className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  <div className="absolute inset-0 bg-green-900/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="h-48 sm:h-64 rounded-2xl overflow-hidden shadow-lg relative group"
+                >
+                  <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787759329/WhatsApp_Image_2026-08-25_at_3.12.59_PM_1_r0n12p.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  <div className="absolute inset-0 bg-green-900/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Right side: Text */}
+            <div className="w-full lg:w-[45%]">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-100 text-green-700 text-sm font-bold tracking-widest uppercase mb-8 shadow-sm">
+                  <HeartHandshake className="w-5 h-5 text-green-600" /> Leadership & Inspiration
+                </div>
+                
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] mb-6 tracking-tight">
+                  His Excellency, Dr. Bello Mohammed Matawalle
+                </h2>
+                
+                <div className="mb-8 border-l-4 border-green-500 pl-6 py-2 bg-gradient-to-r from-green-50 to-transparent">
+                  <p className="text-xl sm:text-2xl font-bold text-green-800 leading-snug">
+                    Chairman Board of Trustees, <br className="hidden sm:block" /> and Convener of Tinubu Again Movement (TAM)
+                  </p>
+                </div>
+
+                <div className="space-y-6 text-lg sm:text-xl text-gray-600 leading-relaxed font-medium">
+                  <p>
+                    At the heart of the Tinubu Again Movement is a profound commitment to leadership that inspires, unites, and drives undeniable progress. Dr. Bello Mohammed Matawalle serves as the guiding force behind our collective vision for a stronger Nigeria.
+                  </p>
+                  <p>
+                    Under his guidance as Convener and Chairman of the Board of Trustees, the movement brings together everyday citizens, youth, professionals, and community leaders with one shared goal — to secure our nation's future through sustained growth, strategic reforms, and grassroots mobilization.
+                  </p>
+                </div>
+                
+                <div className="mt-10">
+                  <div className="w-20 h-1.5 bg-green-500 rounded-full"></div>
+                </div>
+              </motion.div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
       {/* SECTION 2: CORE MESSAGE */}
       <section className="py-16 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -452,7 +566,7 @@ export default function Home() {
             </div>
             <div className="mt-10 lg:mt-0 lg:w-1/2 flex justify-center lg:justify-end">
               <img 
-                src="/community-interaction.png" 
+                src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787760658/Agents_talking_Nigerian_women_202608261659_qdx2f3.jpg" 
                 alt="Community Interaction" 
                 className="rounded-2xl shadow-xl w-full max-w-lg object-cover"
               />
@@ -541,7 +655,7 @@ export default function Home() {
             {/* Card 2 */}
             <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
               <div className="relative h-56 w-full overflow-hidden">
-                <img src="/activity-2.png" alt="Kano Event" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/kanoevent/800/600'; }} />
+                <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787760869/WhatsApp_Image_2026-08-22_at_8.00.08_PM_1_jeux77.jpg" alt="Kano Event" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute top-4 right-4 bg-white px-4 py-1.5 rounded-full text-blue-700 text-xs font-bold shadow-sm">
                   Kano
                 </div>
@@ -556,7 +670,7 @@ export default function Home() {
             {/* Card 3 */}
             <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
               <div className="relative h-56 w-full overflow-hidden">
-                <img src="/activity-3.png" alt="Rivers Event" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/riversevent/800/600'; }} />
+                <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787760869/WhatsApp_Image_2026-08-22_at_8.00.08_PM_1_jeux77.jpg" alt="Rivers Event" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute top-4 right-4 bg-white px-4 py-1.5 rounded-full text-blue-700 text-xs font-bold shadow-sm">
                   Rivers
                 </div>
@@ -637,119 +751,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 6.6: PHOTO GALLERY SLIDER */}
-      <section className="py-24 bg-black border-b border-gray-800 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between">
-            <div>
-              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Moments in Motion</h2>
-              <p className="mt-2 text-xl text-gray-400">A visual journey through our grassroots movement across the nation.</p>
-            </div>
-            <div className="mt-4 md:mt-0 flex gap-2">
-              <button 
-                onClick={scrollLeft}
-                className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 hover:border-gray-500 transition-colors"
-              >
-                <ChevronRight className="w-5 h-5 rotate-180 text-gray-400" />
-              </button>
-              <button 
-                onClick={scrollRight}
-                className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 hover:border-gray-500 transition-colors"
-              >
-                <ChevronRight className="w-5 h-5 text-gray-400" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Horizontal Scrolling Gallery */}
-        <div 
-          ref={scrollContainerRef}
-          className="flex overflow-x-auto gap-6 px-4 sm:px-6 lg:px-8 pb-8 snap-x snap-mandatory hide-scrollbar" 
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          onMouseEnter={() => setIsGalleryHovered(true)}
-          onMouseLeave={() => setIsGalleryHovered(false)}
-          onTouchStart={() => setIsGalleryHovered(true)}
-          onTouchEnd={() => setIsGalleryHovered(false)}
-        >
-          {galleryImages.map((src, index) => (
-            <motion.div 
-              key={index}
-              className="flex-none w-72 sm:w-80 md:w-96 aspect-[4/5] relative rounded-3xl overflow-hidden snap-center group shadow-md cursor-pointer"
-              whileHover={{ scale: 0.98 }}
-              transition={{ duration: 0.3 }}
-              onClick={() => setSelectedImage(src)}
-            >
-              <img 
-                src={src} 
-                alt={`Gallery ${index}`} 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Fullscreen Image Modal */}
-        {selectedImage && (
-          <div 
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8 backdrop-blur-sm"
-            onClick={() => setSelectedImage(null)}
-          >
-            <button 
-              className="absolute top-4 right-4 sm:top-8 sm:right-8 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-2 transition-colors z-10"
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelectedImage(null);
-              }}
-            >
-              <X className="w-8 h-8" />
-            </button>
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              className="relative w-full max-w-5xl max-h-full flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img 
-                src={selectedImage} 
-                alt="Fullscreen gallery view" 
-                className="max-w-full max-h-[85vh] object-contain rounded-2xl" 
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
-          </div>
-        )}
-      </section>
-
-      {/* SECTION 7: LEADERSHIP / FACE OF MOVEMENT */}
-      <section className="py-16 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2">
-              <motion.img
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                src="/candidate.png"
-                alt="Leadership"
-                className="rounded-2xl shadow-xl mx-auto object-cover max-w-full md:max-w-md bg-slate-50"
-                style={{ imageRendering: 'high-quality', width: 'auto', height: 'auto', maxHeight: '500px' }}
-              />
-            </div>
-            <div className="md:w-1/2 text-center md:text-left">
-              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">Leadership & Inspiration</h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                At the heart of this movement is leadership committed to progress, unity, and service to the people. We believe in a vision that empowers every citizen and builds a foundation for lasting prosperity.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* SECTION 8: OUR TEAM */}
       <section className="py-24 relative overflow-hidden">
@@ -796,7 +797,9 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778254554/team1e_zugntq.jpg" alt="MAHE SHEHU AHMED, PHD, MNI" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <div className="w-full h-full bg-white/10 flex items-center justify-center">
+                      <User className="w-16 h-16 text-white/50" />
+                    </div>
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-1">Mahe Shehu Ahmed, PhD, MNI</h3>
@@ -812,7 +815,9 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778254005/team1-yt_yfpru6.jpg" alt="PROFESSOR STEVE EGBO" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <div className="w-full h-full bg-white/10 flex items-center justify-center">
+                      <User className="w-16 h-16 text-white/50" />
+                    </div>
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-1">Professor Steve Egbo</h3>
@@ -828,7 +833,9 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <img src="/team4.jpeg" alt="Team Member" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <div className="w-full h-full bg-white/10 flex items-center justify-center">
+                      <User className="w-16 h-16 text-white/50" />
+                    </div>
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-1">Michael Adeyemi</h3>
@@ -837,6 +844,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+$d
         </div>
       </section>
 
