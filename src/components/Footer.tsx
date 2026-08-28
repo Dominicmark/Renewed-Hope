@@ -61,19 +61,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">House 38A Amal Pepple Estate, Gosa Abuja Nig.</span>
+                <span className="text-gray-400 text-sm">40 Blantyre Cres, Wuse 2, Abuja 900103, Federal Capital Territory</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">+234 708 280 4446</span>
-              </li>
-              <li className="flex items-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="h-5 w-5 mr-2 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">+234 806 837 8633 (WhatsApp)</span>
+                <span className="text-gray-400 text-sm">08161115161</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">renewedhopegrassrootinitiative@gmail.com</span>
+                <span className="text-gray-400 text-sm">tinubuagainmovement@gmail.com</span>
               </li>
             </ul>
           </div>

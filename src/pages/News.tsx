@@ -3,99 +3,23 @@ import { Calendar, ArrowRight, Play, Video } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function News() {
-  const newsItems = [
-    {
-      id: 1,
-      title: 'Press Briefing: A Mandate for Continuity',
-      date: 'May 03, 2026',
-      excerpt: "Director General Alhaji Awwal Abdullahi Aliyu addresses the press, mobilizing grassroots support for President Tinubu's reelection. The briefing highlights recent economic progress, including foreign exchange reserve growth and structural reforms, urging Nigerians to support the administration for another four years.",
-      image: 'https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.29_AM_2_ndejuu.jpg',
-      category: 'Press Briefing',
-      link: '/news/mandate-for-continuity'
-    }
-  ];
-
   const videoUpdates = [
     {
       id: 1,
-      title: 'Arise News Coverage: Tinubu Again DG Briefs Press on Mandate for Continuity',
-      videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1778119783/WhatsApp_Video_2026-05-05_at_9.46.25_AM_1_tv7twv.mp4',
+      title: 'Our Journey So Far: Highlights from the Tinubu Again Movement',
+      videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1787922133/WhatsApp_Video_2026-08-27_at_7.03.30_PM_gmdeb0.mp4',
     },
     {
       id: 2,
-      title: 'News Central Report: Grassroots Initiative Rallies Support for Tinubu Reelection',
-      videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1778119862/WhatsApp_Video_2026-05-05_at_9.46.24_AM_1_maaqub.mp4',
+      title: 'Activities on the Ground - Abuja',
+      videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1787761745/WhatsApp_Video_2026-08-26_at_5.27.46_PM_bq0itj.mp4',
+      isVertical: true
     },
     {
       id: 3,
-      title: 'NTA Highlights: Economic Progress & Reforms Noted in Tinubu Again Press Briefing',
-      videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1778119834/WhatsApp_Video_2026-05-05_at_9.46.24_AM_nkdcie.mp4',
-    }
-  ];
-
-  const externalLinks = [
-    {
-      id: 1,
-      source: 'The Nation',
-      title: 'Group Lauds FG For Reforms Economic Gains',
-      url: 'https://thenationonlineng.net/group-lauds-fg-for-reforms-economic-gains/',
-      date: 'May 3, 2026',
-      image: 'https://cdn.thenationonlineng.net/wp-content/uploads/2026/05/04062348/Renewed-Hope-Grassroots-Initiatives.jpg',
-      excerpt: 'A grassroots group, Tinubu Again, has commended the Federal Government over the positive impact of its economic reforms on ordinary Nigerians.'
-    },
-    {
-      id: 2,
-      source: 'Pointblank News',
-      title: '2027: Group backs Tinubu’s re-election, rejects one-term presidency calls',
-      url: 'https://pointblanknews.com/pbn/exclusive/2027-group-backs-tinubus-re-election-rejects-one-term-presidency-calls/',
-      date: 'May 3, 2026',
-      image: 'https://pointblanknews.com/pbn/wp-content/uploads/2026/05/IMG_20260503_123433_880@-349782201-scaled.jpg',
-      excerpt: 'As political realignments continue ahead of 2027, Tinubu Again strongly supports the re-election of President Bola Tinubu to consolidate his achievements.'
-    },
-    {
-      id: 3,
-      source: 'The Guardian',
-      title: '2027: Pro-Tinubu group faults single 4-year term',
-      url: 'https://guardian.ng/news/2027-pro-tinubu-group-faults-single-4-year-term/',
-      date: 'May 3, 2026',
-      image: 'https://cdn.guardian.ng/wp-content/uploads/2026/04/IMG-20260422-WA0096.jpg',
-      excerpt: 'Stressing the need for continuity, a pro-Tinubu group highlighted why changing leadership mid-way through economic redesign could derail the country\'s progress.'
-    },
-    {
-      id: 4,
-      source: 'Vanguard News',
-      title: 'Group backs Tinubu’s 2027 re-election, rejects one-term agenda',
-      url: 'https://www.vanguardngr.com/2026/05/group-backs-tinubus-2027-re-election-rejects-one-term-agenda/',
-      date: 'May 3, 2026',
-      image: 'https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.29_AM_2_ndejuu.jpg',
-      excerpt: 'Tinubu Again has rejected calls for a one-term presidency, emphasizing that reforms require an eight-year tenure to fully materialize.'
-    },
-    {
-      id: 5,
-      source: 'Naija Blitz News',
-      title: 'Group rallies behind Tinubu, pushes continuity mandate for 2027',
-      url: 'https://naijablitznews.com/2026/05/03/group-rallies-behind-tinubu-pushes-continuity-mandate-for-2027/',
-      date: 'May 3, 2026',
-      image: 'https://naijablitznews.com/wp-content/uploads/2026/05/20260503_1218521-1000x600.jpg',
-      excerpt: 'Dr. Jaafaru Y. Sa\'ad, Director General of Tinubu Again, addresses the press to rally support for President Tinubu and ensure grassroots mobilization ahead of the 2027 elections.'
-    },
-    {
-      id: 6,
-      source: 'The Sun',
-      title: '2027: Tinubu not afraid of contest – Tinubu Again',
-      url: 'https://thesun.ng/2027-tinubu-not-afraid-of-contest-rhgi/',
-      date: 'May 3, 2026',
-      image: 'https://d1jcea4y7xhp7l.cloudfront.net/wp-content/uploads/2026/04/Bola-Tinubu.png',
-      excerpt: 'Clarifying the group\'s stance, Tinubu Again Director General noted that while asking for continuity, President Tinubu remains unafraid of any electoral contest.'
-    },
-    {
-      id: 7,
-      source: 'Voice of Nigeria',
-      title: 'Group Commends President Tinubu’s Economic Strides',
-      url: 'https://von.gov.ng/group-commends-president-tinubus-economic-strides/',
-      date: 'May 3, 2026',
-      image: 'https://res.cloudinary.com/dbbw8jsjc/image/upload/v1778082216/WhatsApp_Image_2026-05-05_at_9.46.29_AM_2_ndejuu.jpg',
-      excerpt: 'Highlighting Nigeria\'s delisting from the FATF grey list and the rise in foreign reserves, the group lauded the administration\'s significant economic strides.'
+      title: 'Grassroots Engagement & Activities',
+      videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1787760875/WhatsApp_Video_2026-08-22_at_8.00.09_PM_dvftx0.mp4',
+      isVertical: true
     }
   ];
 
@@ -159,7 +83,7 @@ export default function News() {
                 transition={{ delay: idx * 0.1 }}
                 className="group cursor-pointer"
               >
-                <div className="relative aspect-video rounded-2xl overflow-hidden mb-4 bg-gray-800">
+                <div className={`relative rounded-2xl overflow-hidden mb-4 bg-gray-800 ${video.isVertical ? 'aspect-[9/16]' : 'aspect-video'}`}>
                   <video 
                     src={video.videoUrl} 
                     className="w-full h-full object-cover"
@@ -172,109 +96,6 @@ export default function News() {
                 </h3>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* LATEST ARTICLES SECTION */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Latest Articles & Reports</h2>
-            <div className="w-20 h-1 bg-green-600 mt-4 rounded-full"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-3">
-            {newsItems.map((post, index) => (
-              <motion.article 
-                key={post.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex flex-col items-start justify-between bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="relative w-full overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt=""
-                    className="aspect-[16/9] w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute top-4 left-4 z-10 rounded-full bg-green-600/90 backdrop-blur-sm px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                    {post.category}
-                  </div>
-                </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-x-2 text-sm mb-4 text-gray-500 font-medium">
-                    <Calendar className="w-4 h-4 text-green-600" />
-                    {post.date}
-                  </div>
-                  <h3 className="text-xl font-bold leading-tight text-gray-900 mb-4 group-hover:text-green-700 transition-colors">
-                    <Link to={post.link}>
-                      <span className="absolute inset-0" />
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="line-clamp-3 text-base text-gray-600 mb-6 flex-grow">{post.excerpt}</p>
-                  
-                  <Link to={post.link} className="mt-auto flex items-center gap-x-2 text-sm font-bold text-red-600 group-hover:text-red-700 uppercase tracking-widest relative">
-                    Read Story 
-                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* EXTERNAL NEWS COVERAGE */}
-      <section className="py-20 bg-green-50 border-t border-green-100">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-10 text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">In The Press</h2>
-            <p className="mt-4 text-gray-600 font-medium">Read more about our activities on these platforms.</p>
-            <div className="w-16 h-1 bg-green-600 mt-4 mx-auto rounded-full"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {externalLinks.map((link, index) => {
-              const domain = new URL(link.url).hostname.replace('www.', '');
-              return (
-                <motion.a
-                  key={link.id}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-[#F0F2F5] rounded-xl overflow-hidden border border-gray-200 hover:shadow-md transition-all group flex flex-col max-w-sm mx-auto w-full"
-                >
-                  <div className="relative aspect-[1.91/1] w-full bg-gray-200 overflow-hidden">
-                    <img 
-                      src={link.image} 
-                      alt="" 
-                      className="w-full h-full object-cover" 
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <div className="p-3 flex flex-col flex-grow">
-                    <h3 className="text-[15px] font-bold text-gray-900 leading-snug mb-1">
-                      {link.title}
-                    </h3>
-                    <p className="text-[13px] text-gray-600 line-clamp-3 mb-2 flex-grow">
-                      {link.excerpt}
-                    </p>
-                    <div className="text-[12px] text-gray-500 mt-auto lowercase">
-                      {domain}
-                    </div>
-                  </div>
-                </motion.a>
-              );
-            })}
           </div>
         </div>
       </section>

@@ -46,8 +46,8 @@ export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   
   // Direct Cloudinary MP4 URL for native playback
-  const cloudinaryVideoUrl = "https://res.cloudinary.com/dbbw8jsjc/video/upload/WhatsApp_Video_2026-05-05_at_9.46.25_AM_qalaey.mp4"; 
-  const cloudinaryPosterUrl = "https://res.cloudinary.com/dbbw8jsjc/video/upload/WhatsApp_Video_2026-05-05_at_9.46.25_AM_qalaey.jpg";
+  const cloudinaryVideoUrl = "https://res.cloudinary.com/dbbw8jsjc/video/upload/v1787921114/WhatsApp_Video_2026-08-27_at_10.37.51_PM_da3cit.mp4"; 
+  const cloudinaryPosterUrl = "https://res.cloudinary.com/dbbw8jsjc/video/upload/v1787921114/WhatsApp_Video_2026-08-27_at_10.37.51_PM_da3cit.jpg";
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isGalleryHovered, setIsGalleryHovered] = useState(false);
@@ -438,6 +438,26 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* SECTION 1.75: SECOND VIDEO SECTION */}
+      <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tight">Our Journey So Far</h2>
+            <div className="w-16 h-1 bg-green-500 mx-auto rounded-full mb-6"></div>
+          </div>
+          <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-gray-800 bg-black">
+            <div className="aspect-video w-full relative">
+              <video 
+                src="https://res.cloudinary.com/dbbw8jsjc/video/upload/v1787922133/WhatsApp_Video_2026-08-27_at_7.03.30_PM_gmdeb0.mp4"
+                controls
+                playsInline
+                className="w-full h-full object-cover rounded-3xl"
+              ></video>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 2: CORE MESSAGE */}
       <section className="py-16 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

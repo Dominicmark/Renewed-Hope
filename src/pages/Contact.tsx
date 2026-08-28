@@ -39,8 +39,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-gray-900 uppercase tracking-wider">Email</p>
-                  <a href="mailto:info@rhgi.org.ng" className="mt-1 text-lg text-gray-600 hover:text-green-600 transition-colors">
-                    info@rhgi.org.ng
+                  <a href="mailto:tinubuagainmovement@gmail.com" className="mt-1 text-lg text-gray-600 hover:text-green-600 transition-colors">
+                    tinubuagainmovement@gmail.com
                   </a>
                 </div>
               </div>
@@ -50,8 +50,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-gray-900 uppercase tracking-wider">Phone</p>
-                  <a href="tel:+2348000000000" className="mt-1 text-lg text-gray-600 hover:text-green-600 transition-colors">
-                    +234 800 000 0000
+                  <a href="tel:08161115161" className="mt-1 text-lg text-gray-600 hover:text-green-600 transition-colors">
+                    08161115161
                   </a>
                 </div>
               </div>
@@ -62,8 +62,8 @@ export default function Contact() {
                 <div>
                   <p className="text-sm font-semibold text-gray-900 uppercase tracking-wider">Address</p>
                   <p className="mt-1 text-lg text-gray-600">
-                    123 Tinubu Again Avenue,<br />
-                    Abuja, Nigeria
+                    40 Blantyre Cres, Wuse 2,<br />
+                    Abuja 900103, Federal Capital Territory
                   </p>
                 </div>
               </div>
