@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rhgrassrootsinitiative.org/sitemap.xml
+Sitemap: https://ais-pre-mb6g5a45q7zkge6era3ovo-358459413168.europe-west2.run.app/sitemap.xml

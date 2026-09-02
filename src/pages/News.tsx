@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Calendar, ArrowRight, Play, Video } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import AutoPlayVideo from '../components/AutoPlayVideo';
 
 export default function News() {
   const videoUpdates = [
@@ -84,10 +85,9 @@ export default function News() {
                 className="group cursor-pointer"
               >
                 <div className={`relative rounded-2xl overflow-hidden mb-4 bg-gray-800 ${video.isVertical ? 'aspect-[9/16]' : 'aspect-video'}`}>
-                  <video 
+                  <AutoPlayVideo 
                     src={video.videoUrl} 
                     className="w-full h-full object-cover"
-                    controls
                     preload="metadata"
                   />
                 </div>

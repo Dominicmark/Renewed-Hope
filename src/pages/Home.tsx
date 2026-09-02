@@ -1,46 +1,9 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Target, TrendingUp, HeartHandshake, ArrowRight, ChevronRight, Video, X, User } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
-
-function AutoPlayVideo({ src, className, children }: { src: string, className?: string, children?: React.ReactNode }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          videoRef.current?.play().catch(() => {
-            // Autoplay might be blocked if not muted, but we set muted
-          });
-        } else {
-          videoRef.current?.pause();
-        }
-      });
-    }, { threshold: 0.5 });
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <>
-      <video
-        ref={videoRef}
-        src={src}
-        controls
-        playsInline
-        muted
-        loop
-        className={className}
-      ></video>
-      {children}
-    </>
-  );
-}
+import AutoPlayVideo from '../components/AutoPlayVideo';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -104,40 +67,7 @@ export default function Home() {
   }, [isGalleryHovered]);
 
   useEffect(() => {
-    // Autoplay when scrolled into view
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && videoRef.current) {
-            // Attempt to play with volume on
-            videoRef.current.volume = 1;
-            videoRef.current.muted = false;
-            
-            videoRef.current.play().catch(e => {
-              console.log("Unmuted autoplay prevented by browser. Falling back to muted playback.", e);
-              // Fallback to muted if browser blocks unmuted autoplay
-              if (videoRef.current) {
-                videoRef.current.muted = true;
-                videoRef.current.play().catch(err => console.log("Autoplay entirely prevented:", err));
-              }
-            });
-          } else if (!entry.isIntersecting && videoRef.current) {
-            videoRef.current.pause();
-          }
-        });
-      },
-      { threshold: 0.6 } // Play when 60% of the video is visible
-    );
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
-    };
+    // Only keeping hover logic, autoplay logic was moved to AutoPlayVideo
   }, []);
 
   return (
@@ -447,12 +377,10 @@ export default function Home() {
           </div>
           <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-gray-800 bg-black">
             <div className="aspect-video w-full relative">
-              <video 
+              <AutoPlayVideo 
                 src="https://res.cloudinary.com/dbbw8jsjc/video/upload/v1787922133/WhatsApp_Video_2026-08-27_at_7.03.30_PM_gmdeb0.mp4"
-                controls
-                playsInline
                 className="w-full h-full object-cover rounded-3xl"
-              ></video>
+              />
             </div>
           </div>
         </div>
@@ -771,15 +699,12 @@ export default function Home() {
                 }
               }}
             >
-              <video 
+              <AutoPlayVideo 
                 ref={videoRef}
                 src={cloudinaryVideoUrl}
                 poster={cloudinaryPosterUrl}
-                controls
-                playsInline
-                loop
                 className="w-full h-full object-cover rounded-3xl"
-              ></video>
+              />
               
               {/* Overlay elements only visible when hovered/paused */}
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-gray-900 via-gray-900/5 to-transparent opacity-60"></div>
@@ -805,6 +730,30 @@ export default function Home() {
             <Link to="/news" className="inline-flex items-center gap-2 text-green-400 font-bold hover:text-green-300 transition-colors">
               Watch more videos on our News page <ArrowRight className="w-5 h-5" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6.75: COLLO MONEY VIDEO */}
+      <section className="py-20 bg-slate-900 text-white relative overflow-hidden border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-4xl mx-auto mb-10">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-white to-red-500">
+              TINUBU AGAIN X KOLOMONI
+            </h2>
+            <p className="text-2xl text-white font-medium mb-3">Experience the wonderful initiative of the movement.</p>
+            <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Partnering with a leading fintech brand to empower grassroots entrepreneurs with POS terminals, enabling them to start and grow their own agency banking businesses.
+            </p>
+            <div className="w-24 h-1.5 bg-green-500 mx-auto rounded-full mb-8"></div>
+          </div>
+          <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(34,197,94,0.1)] border border-gray-800 bg-black">
+            <div className="aspect-video w-full relative">
+              <AutoPlayVideo 
+                src="https://res.cloudinary.com/dbbw8jsjc/video/upload/v1788388654/lv_0_20260902152436_n7zuex.mp4"
+                className="w-full h-full object-cover rounded-3xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -969,7 +918,7 @@ export default function Home() {
                 <div className="relative w-36 h-36 mx-auto mb-6">
                   <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-emerald-300 rounded-full animate-spin-slow opacity-50 blur-md group-hover:opacity-100 transition-opacity" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 z-10">
-                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/v1787766551/images22_q1nsrk.jpg" alt="Hon. Mohammed Sani Sidi" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="https://res.cloudinary.com/dbbw8jsjc/image/upload/a_270/f_auto/q_auto/WhatsApp_Image_2026-09-01_at_5.29.51_PM_yl8sv4.jpg" alt="Hon. Mohammed Sani Sidi" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-1">Hon. Mohammed Sani Sidi</h3>
