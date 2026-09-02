@@ -21,6 +21,26 @@ export default function News() {
       title: 'Grassroots Engagement & Activities',
       videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1787760875/WhatsApp_Video_2026-08-22_at_8.00.09_PM_dvftx0.mp4',
       isVertical: true
+    },
+    {
+      id: 4,
+      title: 'Tinubu Again Movement - Community Highlights',
+      videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1788391490/WhatsApp_Video_2026-09-01_at_2.48.03_PM_2_ddxgnp.mp4',
+    },
+    {
+      id: 5,
+      title: 'Grassroots Mobilization Update',
+      videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1788391465/WhatsApp_Video_2026-09-01_at_2.48.03_PM_yv2mc9.mp4',
+    },
+    {
+      id: 6,
+      title: 'Local Engagements and Support',
+      videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1788391453/WhatsApp_Video_2026-09-01_at_2.48.02_PM_eswzgi.mp4',
+    },
+    {
+      id: 7,
+      title: 'Momentum Across Communities',
+      videoUrl: 'https://res.cloudinary.com/dbbw8jsjc/video/upload/v1788391452/WhatsApp_Video_2026-09-01_at_2.48.03_PM_1_s10yso.mp4',
     }
   ];
 
