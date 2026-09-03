@@ -19,40 +19,57 @@
     <meta name="twitter:title" content="Tinubu Again Movement - Continuity & Progress for Nigeria" />
     <meta name="twitter:description" content="The Tinubu Again Movement is a grassroots initiative dedicated to supporting the continuity and economic reforms of President Bola Ahmed Tinubu's administration." />
     <meta name="twitter:image" content="/tinubu-again-logo.png" />
+    
+    <style>
+      /* Hide the SEO fallback content from real users to prevent visual flashing before React loads */
+      .seo-fallback {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
   </head>
   <body>
     <!-- AI & Crawler Fallback Content: This static HTML is read by search engines and AI scrapers before React loads. Once JavaScript executes, React replaces this container. -->
     <div id="root">
-      <header>
-        <h1>Tinubu Again Movement</h1>
-        <p>A Mandate for Continuity and Economic Progress in Nigeria.</p>
-      </header>
-      <main>
-        <section>
-          <h2>About The Movement</h2>
-          <p>We are a dedicated grassroots movement rallying unwavering support for the continuity of President Bola Ahmed Tinubu's administration. Our focus is on sustaining the bold economic reforms, infrastructural development, and national security initiatives that are laying the foundation for a prosperous Nigeria.</p>
-        </section>
-        <section>
-          <h2>Our Core Focus Areas</h2>
-          <ul>
-            <li><strong>Economic Recovery:</strong> Backing reforms that stabilize the Naira and attract foreign direct investment.</li>
-            <li><strong>Infrastructural Development:</strong> Supporting the completion of legacy projects connecting Nigeria's economic hubs.</li>
-            <li><strong>Youth Empowerment:</strong> Partnering with brands like Kolomoni to empower grassroots entrepreneurs with POS terminals.</li>
-            <li><strong>National Security:</strong> Supporting the administration's efforts to secure communities and farmlands.</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Tinubu Again x Kolomoni Initiative</h2>
-          <p>Experience the wonderful initiative of the movement. We are partnering with a leading fintech brand, Kolomoni, to empower grassroots entrepreneurs with POS terminals, enabling them to start and grow their own agency banking businesses.</p>
-        </section>
-        <section>
-          <h2>Leadership</h2>
-          <p>Led by Director General Alhaji Awwal Abdullahi Aliyu, National Coordinator Dr. Bello Bashir, and key figures like Hon. Mohammed Sani Sidi.</p>
-        </section>
-      </main>
-      <footer>
-        <p>Join the Tinubu Again Movement today. Securing Nigeria's Future through Continuity.</p>
-      </footer>
+      <div class="seo-fallback">
+        <header>
+          <h1>Tinubu Again Movement</h1>
+          <p>A Mandate for Continuity and Economic Progress in Nigeria.</p>
+        </header>
+        <main>
+          <section>
+            <h2>About The Movement</h2>
+            <p>We are a dedicated grassroots movement rallying unwavering support for the continuity of President Bola Ahmed Tinubu's administration. Our focus is on sustaining the bold economic reforms, infrastructural development, and national security initiatives that are laying the foundation for a prosperous Nigeria.</p>
+          </section>
+          <section>
+            <h2>Our Core Focus Areas</h2>
+            <ul>
+              <li><strong>Economic Recovery:</strong> Backing reforms that stabilize the Naira and attract foreign direct investment.</li>
+              <li><strong>Infrastructural Development:</strong> Supporting the completion of legacy projects connecting Nigeria's economic hubs.</li>
+              <li><strong>Youth Empowerment:</strong> Partnering with brands like Kolomoni to empower grassroots entrepreneurs with POS terminals.</li>
+              <li><strong>National Security:</strong> Supporting the administration's efforts to secure communities and farmlands.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Tinubu Again x Kolomoni Initiative</h2>
+            <p>Experience the wonderful initiative of the movement. We are partnering with a leading fintech brand, Kolomoni, to empower grassroots entrepreneurs with POS terminals, enabling them to start and grow their own agency banking businesses.</p>
+          </section>
+          <section>
+            <h2>Leadership</h2>
+            <p>Led by Director General Alhaji Awwal Abdullahi Aliyu, National Coordinator Dr. Bello Bashir, and key figures like Hon. Mohammed Sani Sidi.</p>
+          </section>
+        </main>
+        <footer>
+          <p>Join the Tinubu Again Movement today. Securing Nigeria's Future through Continuity.</p>
+        </footer>
+      </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
